@@ -1,0 +1,75 @@
+<div class="gl-details mx-4" *ngIf="glDetails">
+  <div class="card">
+    <div class="card-header">
+      <h6 class="card-title">General Ledger Details</h6>
+    </div>
+    <div class="card-body row">
+      <div class="col-md-3">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="list-group-text">Account ID</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.AccountID || N / A
+              }}</span>
+          </li>
+          <li class="list-group-item">
+            <span class="list-group-text">Account Name</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.AccountName || N / A
+              }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="list-group-text">Status</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.Status || N / A
+              }}</span>
+          </li>
+          <li class="list-group-item">
+            <span class="list-group-text">Is Dormant</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.IsDormant || N / A
+              }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="list-group-text">Currency ID</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.CurrencyID || N / A
+              }}</span>
+          </li>
+          <li class="list-group-item">
+            <span class="list-group-text">Gender ID</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.GenderID || N / A
+              }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="list-group-text">Client Type</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.ClientType || N / A
+              }}</span>
+          </li>
+          <li class="list-group-item">
+            <span class="list-group-text">ID</span>
+            <span class="list-group-text text-muted">{{
+              glDetails.ID1 || N / A
+              }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

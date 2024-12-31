@@ -1,0 +1,49 @@
+<section class="content">
+  <div class="content-block">
+    <div class="row clearfix">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">          
+        <div class="body">
+          <div class="page" style="margin-top: 60px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="text-align: left;">
+                <h4 style="font-weight: bold;">
+                  Environmental, Social, Governance & Diversity
+                </h4>
+                <p style="font-size: 1.2rem; color: #999;">
+                  Share your Environmental, Social, Governance and Diversity details and goals with your customers
+                </p>
+              </div>
+              <div>
+                <button mat-button color="primary" class="mat-raised-button edit-button" (click)="openEditDialog()">EDIT SECTION</button>
+              </div>
+            </div>
+            <mat-accordion class="custom-jumbotron">
+              <!-- Accordion Sections -->
+              <mat-expansion-panel *ngFor="let section of accordionSections" expanded="false" style="margin-bottom: 0.5rem;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{ section.title }}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="accordion-section">
+                  <!-- Dummy question 1 -->
+                  <p>{{ section.question1 }}</p>
+                  <label>
+                    <mat-checkbox>Yes</mat-checkbox>
+                  </label>
+                  <label>
+                    <mat-checkbox>No</mat-checkbox>
+                  </label>
+                  <br>
+                  <!-- Dummy question 2 -->
+                  <p>{{ section.question2 }}</p>
+                  <textarea matInput></textarea>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

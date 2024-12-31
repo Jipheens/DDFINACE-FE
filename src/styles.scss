@@ -1,0 +1,373 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~material-icons-font/sass/variables";
+@import "~material-icons-font/sass/mixins";
+$MaterialIcons_FontPath: "~material-icons-font/fonts";
+@import "~material-icons-font/sass/main";
+@import "~material-icons-font/sass/Regular";
+
+html {
+  font-size: 18px; /* change the value as needed */
+}
+// #e3e3e3
+.table tr.activeRow td {
+  background-color: #e8e8e8 !important;
+  //color: white;
+}
+
+//******************************************************************************************************
+
+.error-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.error-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+//*************************************************************************************************************************************
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  font-size: 14px;
+  width: 100%;
+}
+
+thead th,
+tbody td {
+  font-size: 12px;
+  padding: 8px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+//******************************************************************************************
+
+//*****************************************************************************************************************************
+
+$badge-color-hod: #2196f3; // Blue for HOD
+$badge-color-hod-approved: #4caf50; // Green for HOD Approved
+$badge-color-finance: #e91e63; // Pink for Finance
+$badge-color-finance-approved: #673ab7; // Purple for Finance Approved
+$badge-color-procurement: #3f51b5; // Indigo for Procurement
+$badge-color-procurement-approved: #795548; // Brown for Procurement Approved
+
+// Remark Text Colors
+$remark-text-color: #757575; // Grey for remark text
+
+// Define styles for the chat header section
+.col-xs-12.col-sm-12.col-md-12.col-lg-12 {
+  .bg-color {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ebebee;
+    padding: 0px;
+    border-radius: 10px;
+
+    .chat-header {
+      .row {
+        .col-2,
+        .col-3,
+        .col-4,
+        .col-6,
+        .col-12,
+        .col-xs-2,
+        .col-xs-4,
+        .col-xs-12,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-12,
+        .col-md-6,
+        .col-md-12,
+        .col-lg-6,
+        .col-lg-12 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .chat-about {
+            width: 100%;
+            margin-bottom: 6px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+
+            .chat-with {
+              font-size: 16px;
+              color: #333;
+              margin-bottom: 6px;
+            }
+
+            .chat-num-messages {
+              .badge {
+                padding: 4px 10px;
+                font-size: 14px;
+                border-radius: 5px;
+                display: inline-block;
+                margin-right: 10px;
+                font-weight: bold;
+                color: #fff; // White text for better visibility
+              }
+
+              // Define badge colors and class names
+              .badge-hod {
+                background-color: $badge-color-hod; // Blue for HOD
+              }
+
+              .badge-hod-approved {
+                background-color: $badge-color-hod-approved; // Green for HOD Approved
+              }
+
+              .badge-finance {
+                background-color: $badge-color-finance; // Pink for Finance
+              }
+
+              .badge-finance-approved {
+                background-color: $badge-color-finance-approved; // Green for Finance Approved
+              }
+
+              .badge-procurement {
+                background-color: $badge-color-procurement; // Yellow for Procurement
+              }
+
+              .badge-procurement-approved {
+                background-color: $badge-color-procurement-approved; // Green for Procurement Approved
+              }
+            }
+
+            .remarks {
+              display: block;
+              margin-top: 10px;
+
+              strong {
+                font-weight: bold;
+                margin-right: 5px;
+              }
+
+              .remarks-content {
+                font-size: 14px;
+                color: $remark-text-color; // Gray text color for remarks
+                margin-top: 5px; // Add some spacing
+              }
+            }
+
+            &:hover {
+              background-color: #f5f5f5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//*****************************************************************************************************************************
+// /* Define styles for the selected button */
+//****************************************************************************************************
+
+/* Pending */
+.mat-button.pending {
+  background: linear-gradient(to right, #007bff, #3e7ad6);
+}
+
+/* Verified */
+.mat-button.verified {
+  background: linear-gradient(to right, #6610f2, #9a37f2);
+}
+
+/* Approved */
+.mat-button.approved {
+  background: linear-gradient(to right, #198754, #42a75c);
+}
+
+/* Rejected */
+.mat-button.rejected {
+  background: linear-gradient(to right, #f44336, #fe7067);
+}
+
+/* Returned */
+.mat-button.returned {
+  background: linear-gradient(to right, #b8925b, #dfc487);
+}
+
+/* Active */
+.mat-button.active {
+  background: linear-gradient(to right, #333333, #555555);
+}
+
+.mat-button,
+.mat-button.active {
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.2s ease-in-out;
+}
+
+.mat-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.26);
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.mat-button {
+  margin-right: 8px !important;
+}
+
+//*****************************************************************************************************************************
+
+// // Define breakpoints for different screen sizes
+// $breakpoints: (
+//   xs: 0px,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+// );
+
+// // Define zoom levels for different screen sizes
+// $zoom-levels: (
+//   xs: 100%, // No zoom for extra small screens
+//   sm: 95%,  // Zoom level for small screens
+//   md: 90%,  // Zoom level for medium screens
+//   lg: 85%,  // Zoom level for large screens
+//   xl: 80%,  // Zoom level for extra large screens
+// );
+
+// // Loop through breakpoints to generate media queries
+// @each $size, $value in $breakpoints {
+//   @media (min-width: #{$value}) {
+//     html {
+//       zoom: map-get($zoom-levels, $size);
+//     }
+//   }
+// }
+
+// // Define breakpoints for different screen sizes
+// $breakpoints: (
+//   xs: 0px,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+// );
+
+// // Define zoom levels for different screen sizes
+// $zoom-levels: (
+//   xs: 100%, // No zoom for extra small screens
+//   sm: 95%,  // Zoom level for small screens
+//   md: 90%,  // Zoom level for medium screens
+//   lg: 85%,  // Zoom level for large screens
+//   xl: 80%,  // Zoom level for extra large screens
+// );
+
+// // Loop through breakpoints to generate media queries
+// @each $size, $value in $breakpoints {
+//   @media (min-width: #{$value}) {
+//     html {
+//       zoom: map-get($zoom-levels, $size);
+//     }
+//   }
+// }
+
+// // Define the base font size for the application
+// $base-font-size: 16px;
+
+// // Calculate the zoom level based on the device width
+// @function calculate-zoom-level($device-width) {
+//   @if $device-width >= 1200 {
+//     @return 100%;
+//   } @else if $device-width >= 992 {
+//     @return 90%;
+//   } @else if $device-width >= 768 {
+//     @return 80%;
+//   } @else {
+//     @return 70%;
+//   }
+// }
+
+// // Set the zoom level based on the device width
+// body {
+//   font-size: $base-font-size;
+//   zoom: calculate-zoom-level(100%);
+// }
+// Define the base font size for the application
+// $base-font-size: 16px;
+
+// // Calculate the zoom level based on the device width
+// @function calculate-zoom-level($device-width) {
+//   @if $device-width >= 1200 {
+//     @return 100%;
+//   } @else if $device-width >= 992 {
+//     @return 90%;
+//   } @else if $device-width >= 768 {
+//     @return 80%;
+//   } @else {
+//     @return 70%;
+//   }
+// }
+
+// // Set the zoom level based on the device width
+// html {
+//   font-size: $base-font-size;
+//   zoom: calculate-zoom-level(100%);
+// }
+
+// // Define base font size
+// $base-font-size: 20px;
+
+// // Define breakpoints for different screen sizes
+// $small-screen: 480px;
+// $medium-screen: 768px;
+// $large-screen: 1024px;
+
+// // Function to calculate zoom level based on screen width
+// @function calculate-zoom($screen-width) {
+//   @if $screen-width < $small-screen {
+//     @return 0.4; // Example zoom level for small screens
+//   } @else if $screen-width < $medium-screen {
+//     @return 0.4; // Example zoom level for medium screens
+//   } @else if $screen-width < $large-screen {
+//     @return 0.6; // Example zoom level for large screens
+//   } @else {
+//     @return 0.8; // Example zoom level for extra-large screens
+//   }
+// }
+
+// // Apply zoom level using media queries
+// html {
+//   font-size: $base-font-size;
+//   @media screen and (max-width: $small-screen) {
+//     zoom: calculate-zoom($small-screen);
+//   }
+//   @media screen and (min-width: $small-screen) and (max-width: $medium-screen) {
+//     zoom: calculate-zoom($medium-screen);
+//   }
+//   @media screen and (min-width: $medium-screen) and (max-width: $large-screen) {
+//     zoom: calculate-zoom($large-screen);
+//   }
+//   @media screen and (min-width: $large-screen) {
+//     zoom: calculate-zoom($large-screen); // Adjust for your largest screen size
+//   }
+// }
+// Define the base font size for the application
+// Define the base font size for the application
+
+

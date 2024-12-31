@@ -1,0 +1,299 @@
+<section class="content">
+  <div class="content-block">
+    <div class="block-header">
+      <!-- breadcrumb -->
+      <app-breadcrumb [title]="' Update Profile '" [items]="['Home']" [active_item]="'Update Profile'">
+      </app-breadcrumb>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="body" *ngIf="showForm">
+
+            <div class="header">
+              <div class="row">
+
+                <h2>{{ pageFunction }} Update Profile</h2>
+              </div>
+            </div>
+            <form class="mx-4" [formGroup]="mngForm">
+              <div class="row">
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label>supplierCode</mat-label>
+                    <input matInput formControlName="supplierCode" required />
+                    <mat-icon matSuffix (click)="suppliersLookup()">search</mat-icon>
+                    <mat-error *ngIf="mngForm.get('supplierCode').hasError('required')">Supplier Code is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> yearEstablished</mat-label>
+                    <input matInput formControlName="yearEstablished" required />
+                    <mat-icon matSuffix (click)="suppliersLookup()">search</mat-icon>
+                    <mat-error *ngIf="mngForm.get('yearEstablished').hasError('required')">year established is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> companySize</mat-label>
+                    <input matInput formControlName="companySize" required />
+                    <mat-error *ngIf="mngForm.get('companySize').hasError('required')">company Name is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> numberOfEmployees</mat-label>
+                    <input matInput formControlName="numberOfEmployees" required />
+                    <mat-error *ngIf="mngForm.get('numberOfEmployees').hasError('required')">numberOfEmployees is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> industry</mat-label>
+                    <input matInput formControlName="industry" required />
+                    <mat-error *ngIf="mngForm.get('industry').hasError('required')">industry is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> productsAndServices</mat-label>
+                    <input matInput formControlName="productsAndServices" required />
+                    <mat-error *ngIf="mngForm.get('productsAndServices').hasError('required')">productsAndServices is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> taxId</mat-label>
+                    <input matInput formControlName="taxId" required />
+                    <mat-error *ngIf="mngForm.get('taxId').hasError('required')">taxId is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> poDeliveryEmail</mat-label>
+                    <input matInput formControlName="poDeliveryEmail" required />
+                    <mat-error *ngIf="mngForm.get('poDeliveryEmail').hasError('required')">poDeliveryEmail is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> ownershipType</mat-label>
+                    <input matInput formControlName="ownershipType" required />
+                    <mat-error *ngIf="mngForm.get('ownershipType').hasError('required')">ownershipType is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> bankName</mat-label>
+                    <input matInput formControlName="bankName" required />
+                    <mat-error *ngIf="mngForm.get('bankName').hasError('required')">bankName is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-1">
+                  <mat-form-field class="example-full-width mb-1" appearance="outline">
+                    <mat-label> bankAc</mat-label>
+                    <input matInput formControlName="bankAc" required />
+                    <mat-error *ngIf="mngForm.get('bankAc').hasError('required')">bankAc is
+                      required</mat-error>
+                  </mat-form-field>
+                </div>
+
+              </div>
+            </form>
+            <mat-tab-group>
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <mat-icon>attach_file</mat-icon> Upload Mandatory Documentations
+                </ng-template>
+                <div class="mt-3">
+                  <form [formGroup]="tDocumentsForm">
+                    <div style="margin: 20px">
+                      <div class="table-responsive">
+                        <div class="materialTableHeader">
+                          <div class="row">
+                            <div class="col-8">
+                              <ul class="header-buttons-left ms-0">
+                                <li class="dropdown">
+                                  <h2>Upload Documents</h2>
+                                </li>
+                                <li class="dropdown m-l-20">
+                                  <label for="search-input"><i class="material-icons search-icon">search</i></label>
+                                  <input placeholder="Filter..." type="text" (keyup)="tApplyFilter($event)" #tfilter
+                                    class="browser-default search-field" aria-label="Search box" />
+                                </li>
+                                <li>
+                                  <button mat-mini-fab color="primary" (click)="tAddFileRow()">
+                                    <mat-icon class="col-white">add</mat-icon>
+                                  </button>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-4"></div>
+                          </div>
+                        </div>
+                        <div class="table-container">
+
+                          <mat-table #ttable matTableExporter [dataSource]="tAttachmentsDataSource"
+                            formArrayName="tfiledetails" matSort class="mat-cell" #exporter="matTableExporter">
+                            <ng-container matColumnDef="tid">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header
+                                class="column-nowrap psl-3 tbl-col-width-per-6">Id</mat-header-cell>
+                              <mat-cell *matCellDef="let trow; let tindex = index" [formGroupName]="tindex"
+                                class="column-nowrap psl-3 tbl-col-width-per-6">
+                                {{ tindex + 1 }}
+                              </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="documentType">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header
+                                class="column-nowrap psl-3 tbl-col-width-per-50">Document Type</mat-header-cell>
+                              <mat-cell *matCellDef="let trow; let tindex = index" [formGroupName]="tindex"
+                                class="column-nowrap psl-3 tbl-col-width-per-50">
+                                <mat-form-field appearance="outline" class="dropdown-container">
+                                  <mat-label>Document Type</mat-label>
+                                  <mat-select formControlName="documentType">
+                                    <!-- <mat-icon matSuffix (click)="documentTypeLookup()">search</mat-icon> -->
+
+                                    <mat-option value="1">List of Directors</mat-option>
+                                    <mat-option value="2">Certificate of Incorporation</mat-option>
+                                    <mat-option value="3">Trading Certificate</mat-option>
+                                    <mat-option value="4">TAX PIN Certificate</mat-option>
+                                    <mat-option value="5">CR12</mat-option>
+                                    <mat-option value="6">Certificate/Licenses from relevant authorities</mat-option>
+                                    <mat-option value="7">Copy of VAT Certificate</mat-option>
+                                    <mat-option value="8">Copy of Tax Compliance certificate</mat-option>
+                                    <mat-option value="9">Bank Statement certified by the Bank(last 3 months)</mat-option>
+                                    <mat-option value="10">Other</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </mat-cell>
+                            </ng-container>
+                            <ng-container matColumnDef="tfilename">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header
+                                class="column-nowrap psl-3 tbl-col-width-per-50 filename-cell">Filename</mat-header-cell>
+                              <mat-cell *matCellDef="let trow; let tindex = index" [formGroupName]="tindex"
+                                class="column-nowrap psl-3 tbl-col-width-per-50 filename-cell">
+                                <mat-form-field class="example-full-width mt-2 mr-5" appearance="fill">
+                                  <mat-label>Filename</mat-label>
+                                  <input matInput type="text" formControlName="filename" placeholder="Filename"
+                                    maxlength="50" />
+                                </mat-form-field>
+                              </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="tfiletype">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header
+                                class="column-nowrap psl-3 tbl-col-width-per-50 filename-cell">Filetype</mat-header-cell>
+                              <mat-cell *matCellDef="let trow; let tindex = index" [formGroupName]="tindex"
+                                class="column-nowrap psl-3 tbl-col-width-per-50 filename-cell">
+                                <mat-form-field class="example-full-width mt-2 mr-5" appearance="fill">
+                                  <mat-label>Filetype</mat-label>
+                                  <input matInput type="text" formControlName="filetype" placeholder="Filetype"
+                                    maxlength="50" />
+                                </mat-form-field>
+                              </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="tselectFile">
+                              <mat-header-cell *matHeaderCellDef mat-sort-header
+                                class="column-nowrap psl-3 tbl-col-width-per-50 selectfile-cell">Select
+                                File</mat-header-cell>
+                              <mat-cell *matCellDef="let trow; let tindex = index" [formGroupName]="tindex"
+                                class="column-nowrap psl-3 tbl-col-width-per-50 selectfile-cell">
+                                <input #file type="file" [disabled]="!trow.get('documentType').value"
+                                  (change)="onTSelectFile(file.files, trow, tindex, trow.get('documentType').value)"
+                                  [multiple]="'multiple'" required />
+                              </mat-cell>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="tdownload">
+                              <mat-header-cell class="column-nowrap psl-3 tbl-col-width-per-30"
+                                *matHeaderCellDef>Download</mat-header-cell>
+                              <mat-cell *matCellDef="let trow; let tindex = index"
+                                class="column-nowrap psl-3 tbl-col-width-per-30">
+                                <button mat-icon-button color="primary" (click)="$event.stopPropagation()"
+                                  (click)="downloadDocument(trow)" class="tbl-action-btn">
+                                  <mat-icon aria-label="Download">file_download</mat-icon>
+                                </button>
+                              </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="taction">
+                              <mat-header-cell class="column-nowrap psl-3 tbl-col-width-per-30"
+                                *matHeaderCellDef>Action</mat-header-cell>
+                              <mat-cell *matCellDef="let trow; let tindex = index"
+                                class="column-nowrap psl-3 tbl-col-width-per-30">
+                                <button mat-icon-button color="accent" (click)="$event.stopPropagation()"
+                                  (click)="deleteTCall(trow)" class="tbl-action-btn">
+                                  <app-feather-icons [icon]="'trash-2'" [class]="'tbl-fav-delete'"></app-feather-icons>
+                                </button>
+                              </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="tDisplayColumns"></mat-header-row>
+                            <mat-row *matRowDef="let trow; let tindex = index; columns: tDisplayColumns"
+                              [style.cursor]="'pointer'" matRipple></mat-row>
+                            <mat-cell *matNoDataRow colspan="4">No data matching the filter "{{ tinput.value
+                              }}"</mat-cell>
+                          </mat-table>
+
+                        </div>
+
+                        <div *ngIf="tIsFileDataLoading" class="tbl-spinner">
+                          <mat-progress-spinner color="primary" [diameter]="40"
+                            mode="indeterminate"></mat-progress-spinner>
+                        </div>
+                        <mat-paginator [pageSize]="10" [pageSizeOptions]="[2, 5, 10, 20, 30, 40, 50, 100]"
+                          aria-label="Select page of users"></mat-paginator>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </mat-tab>
+
+            </mat-tab-group>
+
+
+            <hr>
+
+            <div class="example-button-row" align="end">
+              <button class="btn-space" type="button" mat-raised-button color="warn" mat-button (click)="cancel()">
+                <mat-icon>cancel</mat-icon>
+                Cancel
+              </button>
+              <button class="btn-space" [hidden]="hideSubmit" (click)="onSubmit()" mat-raised-button color="primary">
+                <mat-icon>update</mat-icon>
+                Update Info
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

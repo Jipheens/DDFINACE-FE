@@ -1,0 +1,208 @@
+                <section class="content">
+                    <div class="content-block">
+                      <div class="block-header">
+                        <!-- breadcrumb -->
+                        <app-breadcrumb [title]="'Profile Page'" [items]="['Home']" [active_item]="'Your Profile'"></app-breadcrumb>
+                      </div>
+                    <section class="custom-section" style="background-color: #f4f5f7; padding: 20px;"> 
+                        <div class="container"> 
+                          <div class="row">
+                            <div class="col-md-4 gradient-custom text-center text-white d-flex flex-column justify-content-center align-items-center">
+                              <!-- <i class="far fa-user-circle fa-3x my-3"></i> -->
+                              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                              <hr class="mt-0 mb-4">
+                              <h2 class="text-white">Personal Information</h2>
+                              <hr class="mt-0 mb-4">
+                      
+                              <!-- Display username and email -->
+                              <div class="d-flex flex-column">
+
+
+                                <div class="mb-3">
+                                  <i class="far fa-user me-2" style="font-size: 1.5em;"></i>
+                                  <h5 class="mb-0">Username:</h5>
+                                  <span class="ms-2">{{ currentUser?.username }}</span>
+                                </div>
+                                <div class="mb-3">
+                                  <i class="far fa-id-badge me-2" style="font-size: 1.5em;"></i>
+                                  <h5 class="mb-0">Supplier Code:</h5>
+                                  <span class="ms-2">{{ currentUser?.supplierCode }}</span>
+                                </div>
+
+                                <div class="mb-3">
+                                  <i class="far fa-envelope me-2" style="font-size: 1.5em;"></i>
+                                  <h5 class="mb-0">Email:</h5>
+                                  <span class="ms-2">{{ currentUser?.email }}</span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                  <mat-icon>phone_iphone</mat-icon>
+                                  <h5 class="mb-0">PhoneNumber:</h5>
+                                  <span class="ms-2">{{ currentUser?.phoneNumber }}</span>
+                                </div>
+                    
+                                <div class="mb-3">
+                                  <mat-icon>work</mat-icon>
+                                  <h5 class="mb-0">Role:</h5>
+                                  <span class="ms-2">{{ currentUser?.roles[0] }}</span>
+                                </div>
+
+
+
+
+                                
+                              </div>
+                            </div>
+                  
+                            <div class="col-md-8 d-flex justify-content-center">
+                              <div class="card mb-3" style="border-radius: .5rem;">
+                                <div class="card-body p-4">
+                                  <hr class="mt-0 mb-4">
+                                  <h2>Company Information</h2>
+                                  <div class="d-flex justify-content-end">
+                                      <button mat-fab color="primary" [hidden]="companyInfo?.entity?.status !== 'PENDING'" (click)="onEditButtonClick(companyInfo.entity)">
+
+                                      <mat-icon>edit</mat-icon>
+                                    </button>
+                                  </div>
+                                  <hr class="mt-0 mb-4">
+
+
+                
+                  <div class="d-flex justify-content-center">
+                    <div class="row pt-1" *ngIf="companyInfo">
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-calendar-alt"></i>
+                          <h6>Year Established</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.yearEstablished }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-building"></i>
+                          <h6>Company Size</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.companySize }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-users"></i>
+                          <h6>Number of Employees</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.numberOfEmployees }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-industry"></i>
+                          <h6>Industry</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.industry }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-id-card"></i>
+                          <h6>Supplier Code</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.supplierCode }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-cogs"></i>
+                          <h6>Products and Services</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.productsAndServices }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-id-card-alt"></i>
+                          <h6>Tax ID</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.taxId }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-envelope"></i>
+                          <h6>PO Delivery Email</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.poDeliveryEmail }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-users-cog"></i>
+                          <h6>Ownership Type</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.ownershipType }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-university"></i>
+                          <h6>Bank Name</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.bankName }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-credit-card"></i>
+                          <h6>Bank Account</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.bankAc }}</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-toggle-on"></i>
+                          <h6>Status</h6>
+                          <p>
+                            <span *ngIf="companyInfo?.entity?.status === 'APPROVED'" class="badge badge-solid-green large-badge">
+                              <i class="fas fa-check-circle me-1"></i>
+                              {{ companyInfo?.entity?.status }}
+                            </span>
+                            <span *ngIf="companyInfo?.entity?.status === 'REJECTED'" class="badge badge-solid-red large-badge">
+                              <i class="fas fa-times-circle me-1"></i>
+                              {{ companyInfo?.entity?.status }}
+                            </span>
+                            <span *ngIf="companyInfo?.entity?.status === 'RETURNED'" class="badge badge-solid-brown large-badge">
+                              <i class="fas fa-undo-alt me-1"></i>
+                              {{ companyInfo?.entity?.status }}
+                            </span>
+                            <span *ngIf="companyInfo?.entity?.status === 'PENDING'" class="badge badge-solid-blue large-badge">
+                              <i class="fas fa-exclamation-circle me-1"></i>
+                              {{ companyInfo?.entity?.status }}
+                            </span>
+                            <span *ngIf="!['APPROVED', 'REJECTED', 'RETURNED', 'PENDING'].includes(companyInfo?.entity?.status)"
+                              class="badge badge-solid-purple">
+                              <i class="fas fa-question-circle me-1"></i>
+                              {{ companyInfo?.entity?.status }}
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="info-item">
+                          <i class="fas fa-comment-alt"></i>
+                          <h6>Remarks</h6>
+                          <p class="text-muted">{{ companyInfo?.entity?.remarks }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div *ngIf="!companyInfo">
+                    <p>Unable to fetch company information.</p>
+                  </div>
+                  <!-- ... (add other details as needed) ... -->
+                  <div class="d-flex justify-content-center">
+                    <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                    <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                    <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       </div> 
+        </section> 
+    </div>
+  </section>
+  

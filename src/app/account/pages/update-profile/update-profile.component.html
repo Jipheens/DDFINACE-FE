@@ -1,0 +1,107 @@
+<section class="content">
+  <div class="content-block">
+    <div class="block-header">
+      <!-- breadcrumb -->
+      <app-breadcrumb [title]="'Account'" [items]="['User']" [active_item]="'User Account'"></app-breadcrumb>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="header">
+            <h2>
+              <strong>Password</strong> Settings
+            </h2>
+          </div>
+          <div class="body">
+            <form [formGroup]="updatePasswordForm">
+              <div class="example-container">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12">
+                    <div class="form-group">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" required readonly />
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('username')
+                              .hasError('required')
+                          "> Username is required </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                 <div class="col-lg-6 col-md-6">
+                    <div class="form-group">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>New Password</mat-label>
+                        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required />
+                        <button mat-icon-button matSuffix (click)="hide = !hide" type="button" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{ hide ? "visibility_off" : "visibility"
+                          }}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('password')
+                              .hasError('required')
+                          "> New password is required </mat-error>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('password')
+                              .hasError('pattern')
+                          "> Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character. </mat-error>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('password')
+                              .hasError('minLength')
+                          "> Please enter atleast 10 characters. </mat-error>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('password')
+                              .hasError('maxLength')
+                          "> Characters must not exceed 25. </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <div class="form-group">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput formControlName="confirmpassword" [type]="hide ? 'password' : 'text'" required />
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{ hide ? "visibility_off" : "visibility"
+                          }}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('confirmpassword')
+                              .hasError('required')
+                          "> Confirm Password is required </mat-error>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('confirmpassword')
+                              .hasError('pattern')
+                          "> Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character. </mat-error>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('confirmpassword')
+                              .hasError('minLength')
+                          "> Please enter atleast 10 characters. </mat-error>
+                        <mat-error *ngIf="
+                            updatePasswordForm
+                              .get('confirmpassword')
+                              .hasError('maxLength')
+                          "> Characters must not exceed 25. </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button mat-raised-button type="submit" [disabled]="!updatePasswordForm.valid" color="primary" (click)="updatePassword()"> Update Password </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

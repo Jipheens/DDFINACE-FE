@@ -1,0 +1,100 @@
+<!-- <div class="form-container  ">
+<h2 class="dialog-title">Edit Environmental, Social, Governance & Diversity</h2>
+<form>
+  <ng-container *ngFor="let section of data">
+    <div class="section-container">
+      <h3 class="section-title">{{ section.title }}</h3>
+      <div class="question-container">
+        <p class="question">{{ section.question1 }}</p>
+<mat-checkbox [(ngModel)]="section.selectedAnswer1">Yes</mat-checkbox>
+<mat-checkbox [(ngModel)]="section.selectedAnswer2">No</mat-checkbox>
+
+
+      </div>
+      <div class="question-container">
+        <p class="question">{{ section.question2 }}</p>
+        <mat-form-field class="answer-textarea">
+          <textarea matInput [(ngModel)]="section.reason"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </ng-container>
+  <div class="button-container">
+    <button mat-raised-button class="save-button" color="primary" type="submit" (click)="onSave(data)">Save</button>
+    <button mat-raised-button class="cancel-button" (click)="onClose()">Cancel</button>
+
+    
+  </div>
+</form>
+
+</div> -->
+
+
+
+<!-- 
+<div class="form-container">
+  <h2 class="dialog-title">Edit Environmental, Social, Governance & Diversity</h2>
+  <form>
+    <ng-container *ngFor="let section of data; let sectionIndex = index">
+      <div class="section-container">
+        <h3 class="section-title">{{ section.title }}</h3>
+        <div class="question-container">
+          <p class="question">{{ section.question1 }}</p>
+          <mat-radio-group [(ngModel)]="section.selectedAnswer1">
+            <mat-radio-button [value]="true">Yes</mat-radio-button>
+            <mat-radio-button [value]="false">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="question-container">
+          <p class="question">{{ section.question2 }}</p>
+          <mat-radio-group [(ngModel)]="section.selectedAnswer2">
+            <mat-radio-button [value]="true">Yes</mat-radio-button>
+            <mat-radio-button [value]="false">No</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field *ngIf="section.selectedAnswer2">
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </ng-container>
+    <div class="button-container">
+      <button mat-raised-button class="save-button" color="primary" type="button" (click)="onSave(data)">Save</button>
+      <button mat-raised-button class="cancel-button" (click)="onClose()">Cancel</button>
+    </div>
+  </form>
+</div> -->
+
+
+<div class="form-container">
+  <h2 class="dialog-title">Edit Environmental, Social, Governance & Diversity</h2>
+  <form>
+    <ng-container *ngFor="let section of data; let sectionIndex = index">
+      <div class="section-container">
+        <h3 class="section-title">{{ section.title }}</h3>
+        <div class="question-container">
+          <p class="question">{{ section.question1 }}</p>
+          <mat-radio-group [(ngModel)]="section.selectedAnswer1" class="radio-group">
+            <mat-radio-button class="radio-button" [value]="true">Yes</mat-radio-button>
+            <mat-radio-button class="radio-button" [value]="false">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+
+          <div class="description-container">
+          <p>If no, please provide a brief description:</p>
+          <mat-form-field class="description-textarea">
+            <textarea matInput [(ngModel)]="section.description" [disabled]="section.selectedAnswer2"></textarea>
+          </mat-form-field>
+        </div>
+        
+
+      </div>
+    </ng-container>
+    <div class="button-container">
+      <button mat-raised-button class="save-button" color="primary" type="button" (click)="onSave(data)">Save</button>
+      <button mat-raised-button class="cancel-button" (click)="onClose()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
